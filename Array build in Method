@@ -550,3 +550,55 @@ end → ending index (exclusive)
 So Arrays.fill(arr, start, end, value) is very similar to JS arr.fill(value, start, end).
 
 If you want, I can also explain why end is exclusive and not inclusive. Do you want me to?
+
+
+In Java: Arrays.stream(arr)
+
+Converts an array into a stream, which is like a sequence of elements you can process.
+
+Example:
+
+int[] arr = {1, 2, 3, 4, 5};
+int sum = Arrays.stream(arr).sum(); // sum all elements
+System.out.println(sum); // 15
+
+
+You can also use map, filter, forEach on a stream:
+
+Arrays.stream(arr)
+      .map(x -> x * 2)   // multiply each element by 2
+      .forEach(System.out::println); // print each
+
+In JavaScript: arr.map, arr.filter, arr.forEach
+
+Similar idea to Java streams but native in JS arrays.
+
+map: transform each element.
+
+let arr = [1,2,3,4,5];
+let doubled = arr.map(x => x*2);
+console.log(doubled); // [2,4,6,8,10]
+
+
+filter: pick elements that satisfy a condition.
+
+let even = arr.filter(x => x % 2 === 0);
+console.log(even); // [2,4]
+
+
+forEach: do something with each element (no return).
+
+arr.forEach(x => console.log(x));
+
+Printing 2D arrays
+
+Java: Arrays.deepToString(arr2D)
+
+int[][] arr2D = {{1,2},{3,4}};
+System.out.println(Arrays.deepToString(arr2D)); // [[1,2],[3,4]]
+
+
+JS: JSON.stringify(arr2D)
+
+let arr2D = [[1,2],[3,4]];
+console.log(JSON.stringify(arr2D)); // [[1,2],[3,4]]
